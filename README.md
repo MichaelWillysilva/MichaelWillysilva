@@ -1,6 +1,6 @@
 <div align="center">
 
-<h3><code>Sejam Bem Vindos @MwS</code></h3>
+<h3><code>Sejam Bem Vindos</code></h3>
 
 <img src="./contrib-heatmap.svg" width="860" />
 
