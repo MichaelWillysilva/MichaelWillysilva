@@ -1,0 +1,7 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+# only needed if you later swap the ASCII mask for a real photo pipeline:
+# pillow
+# numpy
+# opencv-python
+# rembg
