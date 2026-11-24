@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c5a">
+  <meta name="description" content="Atos públicos de saúde relevantes para Contagem e municípios de Minas Gerais.">
+  <title>Observatório de Atos em Saúde — Contagem/MG</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand-mark" aria-hidden="true">SUS</div>
+      <div>
+        <p class="eyebrow">Monitoramento de atos públicos</p>
+        <h1>Saúde pública em foco</h1>
+        <p class="subtitle">Publicações com impacto para Contagem e a gestão municipal do SUS</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="summary-bar" aria-label="Atualização">
+      <div>
+        <strong id="record-count">Carregando publicações…</strong>
+        <span id="updated-at" class="updated"></span>
+      </div>
+      <nav class="quick-filters" aria-label="Atalhos">
+        <button id="all-records" class="quick-filter active" type="button" aria-pressed="true">Todos os atos</button>
+        <button id="contagem-only" class="quick-filter" type="button" aria-pressed="false">Só Contagem</button>
+      </nav>
+    </section>
+
+    <section class="filters" aria-label="Filtros de publicações">
+      <label class="search-field">
+        <span>Buscar no conteúdo</span>
+        <input id="search" type="search" placeholder="Ex.: habilitação, vigilância, Contagem">
+      </label>
+      <label>
+        <span>Fonte</span>
+        <select id="source-filter"><option value="">Todas</option></select>
+      </label>
+      <label>
+        <span>Tipo</span>
+        <select id="type-filter"><option value="">Todos</option></select>
+      </label>
+      <label>
+        <span>Relevância</span>
+        <select id="relevance-filter">
+          <option value="">Todas</option>
+          <option value="alta">Alta — cita Contagem</option>
+          <option value="média">Média — impacto municipal/regional</option>
+          <option value="baixa">Baixa — tema de interesse</option>
+        </select>
+      </label>
+      <label>
+        <span>De</span>
+        <input id="date-from" type="date">
+      </label>
+      <label>
+        <span>Até</span>
+        <input id="date-to" type="date">
+      </label>
+    </section>
+
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <section id="records" class="records" aria-label="Atos monitorados"></section>
+    <p id="empty-state" class="empty-state" hidden>Nenhum ato corresponde aos filtros selecionados.</p>
+  </main>
+
+  <footer>
+    <div class="page">Fontes oficiais · Conteúdo público · Verifique o ato original antes de tomar decisões administrativas.</div>
+  </footer>
+</body>
+</html>

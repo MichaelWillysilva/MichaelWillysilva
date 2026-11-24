@@ -1,0 +1,60 @@
+name: Atualizar monitoramento de portarias
+
+on:
+  schedule:
+    - cron: "20 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monitor-portarias-diario
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: python -m pip install -r requirements.txt
+        working-directory: monitor-portarias-ms
+
+      - name: Consultar fontes e gerar painel
+        env:
+          EMAIL_ENABLED: ${{ secrets.SMTP_HOST != '' && secrets.EMAIL_TO != '' }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          SINCE_DATE="$(python -c 'from datetime import date, timedelta; print(date.today() - timedelta(days=1))')"
+          python main.py --desde "$SINCE_DATE"
+        working-directory: monitor-portarias-ms
+
+      - name: Executar testes
+        run: python -m pytest -q
+        working-directory: monitor-portarias-ms
+
+      - name: Salvar dados públicos atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitor-portarias-ms/site/data.json
+          git add -f monitor-portarias-ms/portarias.db
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração a publicar."
+          else
+            git commit -m "Atualiza atos públicos monitorados"
+            git push
+          fi

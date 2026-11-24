@@ -1,0 +1,93 @@
+http:
+  user_agent: "MonitorPortariasContagem/1.0 (contato: substitua-por-seu-email)"
+  delay_seconds: 2
+  retries: 3
+  timeout_seconds: 30
+
+sources:
+  dou: true
+  bvs: true
+  govbr: true
+  sesmg: true
+  iofmg: true
+  anvisa: true
+  sesmg_search_terms:
+    - "deliberação CIB-SUS"
+    - "CIB-SUS"
+    - "resolução SES"
+    - "habilitação SUS"
+
+filters:
+  ibge_codes:
+    - "3118601"
+    - "311860"
+  institutional_terms:
+    - "Município de Contagem"
+    - "Prefeitura Municipal de Contagem"
+    - "Fundo Municipal de Saúde de Contagem"
+    - "SMS Contagem"
+  state_terms:
+    - "MG"
+    - "Minas Gerais"
+  municipal_scope_terms:
+    - "todos os municípios"
+    - "todos os municípios brasileiros"
+    - "municípios brasileiros"
+    - "municípios de todo o país"
+    - "municípios do Estado de Minas Gerais"
+    - "municípios mineiros"
+    - "municípios de médio porte"
+    - "financiamento da atenção primária à saúde"
+    - "financiamento da APS"
+    - "financiamento da estratégia saúde da família"
+    - "repasse aos municípios"
+  bh_region_terms:
+    - "Região Metropolitana de Belo Horizonte"
+    - "Região Metropolitana de BH"
+    - "RMBH"
+
+themes:
+  Vigilância sanitária:
+    - "vigilância sanitária"
+    - "fiscalização sanitária"
+    - "sistema nacional de vigilância sanitária"
+    - "vigilância em saúde"
+  Serviços de saúde:
+    - "serviços de saúde"
+    - "estabelecimentos de saúde"
+    - "serviços de interesse para a saúde"
+    - "licenciamento sanitário"
+  Medicamentos e farmácia:
+    - "medicamentos"
+    - "assistência farmacêutica"
+    - "farmácia"
+    - "insumos farmacêuticos"
+  Alimentos:
+    - "alimentos"
+    - "segurança dos alimentos"
+    - "rotulagem"
+  Dispositivos e produtos para saúde:
+    - "dispositivos médicos"
+    - "produtos para saúde"
+    - "saneantes"
+    - "cosméticos"
+  Vigilância epidemiológica e imunização:
+    - "vigilância epidemiológica"
+    - "imunização"
+    - "vacinação"
+    - "vacinas"
+  Gestão municipal do SUS:
+    - "secretaria municipal de saúde"
+    - "secretarias municipais de saúde"
+    - "gestão municipal do sus"
+    - "atenção primária à saúde"
+    - "financiamento do sus"
+
+email:
+  enabled: false
+  smtp_host: ""
+  smtp_port: 587
+  smtp_user: ""
+  smtp_password: ""
+  from: ""
+  to: ""
