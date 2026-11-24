@@ -30,7 +30,7 @@ jobs:
 
       - name: Consultar fontes e gerar painel
         env:
-          EMAIL_ENABLED: ${{ secrets.SMTP_HOST != '' && secrets.EMAIL_TO != '' }}
+          EMAIL_ENABLED: ${{ secrets.SMTP_HOST != '' && secrets.EMAIL_TO != '' && (secrets.EMAIL_FROM != '' || secrets.SMTP_USER != '') }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}

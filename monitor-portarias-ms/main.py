@@ -94,6 +94,9 @@ def run() -> int:
     logger = logging.getLogger("monitor-portarias")
     args = parse_args()
     config = load_config()
+    email_enabled = bool(
+        config.get("email", {}).get("enabled", False) or env_enabled("EMAIL_ENABLED")
+    )
     since = args.desde or (date.today() - timedelta(days=1))
     selected = SOURCES if args.fonte == "all" else {args.fonte: SOURCES[args.fonte]}
     if args.fonte == "all":
@@ -176,13 +179,7 @@ def run() -> int:
                             url=candidate.url,
                             text_hash=text_hash,
                             match=match_data,
-                            email_pending=bool(
-                                match_data
-                                and (
-                                    config.get("email", {}).get("enabled", False)
-                                    or env_enabled("EMAIL_ENABLED")
-                                )
-                            ),
+                            email_pending=email_enabled,
                         )
                     processed += 1
                 except Exception as exc:
@@ -213,9 +210,7 @@ def run() -> int:
                 dry_run=False,
             )
             logger.info("Relatório: %s", report_path)
-        if not args.dry_run and (
-            config.get("email", {}).get("enabled", False) or env_enabled("EMAIL_ENABLED")
-        ):
+        if not args.dry_run and email_enabled:
             pending = database.pending_notifications()
             if pending:
                 try:

@@ -110,10 +110,38 @@ class Database:
 
     def pending_notifications(self) -> list[tuple[str, dict]]:
         rows = self.connection.execute(
-            "SELECT document_key, match_json FROM portarias "
-            "WHERE matched = 1 AND email_sent = 0"
+            """
+            SELECT document_key, source, number, published, title, ementa, url,
+                   matched, match_json, agency, act_type, theme, relevance, amount,
+                   deadline, municipal_mentions
+            FROM portarias
+            WHERE email_sent = 0
+            ORDER BY published, source, number
+            """
         ).fetchall()
-        return [(row[0], json.loads(row[1])) for row in rows if row[1]]
+        pending = []
+        for row in rows:
+            item = {
+                "source": row[1],
+                "number": row[2],
+                "date": row[3],
+                "title": row[4],
+                "ementa": row[5],
+                "url": row[6],
+                "matched": bool(row[7]),
+                "agency": row[9],
+                "type": row[10],
+                "theme": json.loads(row[11] or "[]"),
+                "relevance": row[12],
+                "value": row[13],
+                "deadline": row[14],
+                "municipal_mentions": json.loads(row[15] or "[]"),
+            }
+            if row[8]:
+                item.update(json.loads(row[8]))
+            item["matched"] = bool(row[7])
+            pending.append((row[0], item))
+        return pending
 
     def mark_notifications_sent(self, keys: list[str]) -> None:
         self.connection.executemany(
