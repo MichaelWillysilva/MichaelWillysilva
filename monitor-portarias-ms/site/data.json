@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T17:17:02+00:00",
+  "updated_at": "2026-11-25T21:53:37+00:00",
   "records": [
     {
       "source": "Secretaria de Estado de Saúde de Minas Gerais",
@@ -23,6 +23,28 @@
       "deadline": "",
       "snippet": "Os 54 municípios que integram a área de atuação da Superintendência Regional de Saúde (SRS) de Montes Claros aderiram ao […]",
       "url": "https://www.saude.mg.gov.br/noticias/dia-d-minas-unida-no-combate-ao-aedes-tem-adesao-de-todos-os-municipios-da-regional-de-montes-claros/"
+    },
+    {
+      "source": "Secretaria de Estado de Saúde de Minas Gerais",
+      "agency": "Secretaria de Estado de Saúde de Minas Gerais",
+      "number": "Não identificado",
+      "date": "2026-11-25",
+      "title": "Dia D Minas Unida Contra o Aedes tem 100% de adesão na Regional de Passos",
+      "ementa": "Os 28 municípios da área de abrangência da Superintendência Regional de Saúde (SRS) de Passos aderiram à grande mobilização estadual […]",
+      "type": "incentivo",
+      "theme": [
+        "Vigilância sanitária",
+        "Vigilância epidemiológica e imunização",
+        "Gestão municipal do SUS"
+      ],
+      "relevance": "média",
+      "municipal_mentions": [
+        "municípios"
+      ],
+      "value": "",
+      "deadline": "",
+      "snippet": "Os 28 municípios da área de abrangência da Superintendência Regional de Saúde (SRS) de Passos aderiram à grande mobilização estadual […]",
+      "url": "https://www.saude.mg.gov.br/noticias/dia-d-minas-unida-contra-o-aedes-tem-100-de-adesao-na-regional-de-passos/"
     }
   ]
 }
