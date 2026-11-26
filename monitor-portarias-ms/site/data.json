@@ -1,6 +1,78 @@
 {
-  "updated_at": "2026-11-25T21:53:37+00:00",
+  "updated_at": "2026-11-26T21:50:25+00:00",
   "records": [
+    {
+      "source": "Ministério da Saúde — gov.br",
+      "agency": "Ministério da Saúde",
+      "number": "Não identificado",
+      "date": "Não identificada",
+      "title": "Distrito Federal",
+      "ementa": "Distrito Federal",
+      "type": "repasse",
+      "theme": [
+        "Vigilância sanitária",
+        "Medicamentos e farmácia",
+        "Vigilância epidemiológica e imunização"
+      ],
+      "relevance": "média",
+      "municipal_mentions": [
+        "municípios"
+      ],
+      "value": "",
+      "deadline": "",
+      "snippet": "Distrito Federal",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/noticias-para-os-estados/distrito-federal"
+    },
+    {
+      "source": "Ministério da Saúde — gov.br",
+      "agency": "Ministério da Saúde",
+      "number": "Não identificado",
+      "date": "Não identificada",
+      "title": "Minas Gerais",
+      "ementa": "Minas Gerais",
+      "type": "repasse",
+      "theme": [
+        "Vigilância sanitária",
+        "Medicamentos e farmácia",
+        "Vigilância epidemiológica e imunização"
+      ],
+      "relevance": "média",
+      "municipal_mentions": [
+        "municípios"
+      ],
+      "value": "",
+      "deadline": "",
+      "snippet": "Minas Gerais",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/noticias-para-os-estados/minas-gerais"
+    },
+    {
+      "source": "Ministério da Saúde — gov.br",
+      "agency": "Ministério da Saúde",
+      "number": "6.286",
+      "date": "Não identificada",
+      "title": "Perguntas Frequentes (FAQ)",
+      "ementa": "Perguntas Frequentes (FAQ)",
+      "type": "incentivo",
+      "theme": [
+        "Vigilância sanitária",
+        "Serviços de saúde",
+        "Medicamentos e farmácia",
+        "Alimentos",
+        "Dispositivos e produtos para saúde",
+        "Vigilância epidemiológica e imunização",
+        "Gestão municipal do SUS"
+      ],
+      "relevance": "média",
+      "municipal_mentions": [
+        "municípios",
+        "secretarias municipais",
+        "Contagem"
+      ],
+      "value": "R$ 12.386,50",
+      "deadline": "2024-07-31",
+      "snippet": "Perguntas Frequentes (FAQ)",
+      "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/faq"
+    },
     {
       "source": "Secretaria de Estado de Saúde de Minas Gerais",
       "agency": "Secretaria de Estado de Saúde de Minas Gerais",
@@ -45,6 +117,27 @@
       "deadline": "",
       "snippet": "Os 28 municípios da área de abrangência da Superintendência Regional de Saúde (SRS) de Passos aderiram à grande mobilização estadual […]",
       "url": "https://www.saude.mg.gov.br/noticias/dia-d-minas-unida-contra-o-aedes-tem-100-de-adesao-na-regional-de-passos/"
+    },
+    {
+      "source": "Secretaria de Estado de Saúde de Minas Gerais",
+      "agency": "Secretaria de Estado de Saúde de Minas Gerais",
+      "number": "Não identificado",
+      "date": "2026-11-26",
+      "title": "Dia D mobiliza 820 municípios de Minas Gerais no combate aos focos do Aedes aegypti",
+      "ementa": "O Governo de Minas realiza o Dia D de Enfrentamento às Arboviroses neste sábado (28/11), com a adesão de 96% […]",
+      "type": "outros",
+      "theme": [
+        "Vigilância sanitária",
+        "Medicamentos e farmácia"
+      ],
+      "relevance": "média",
+      "municipal_mentions": [
+        "municípios"
+      ],
+      "value": "",
+      "deadline": "",
+      "snippet": "O Governo de Minas realiza o Dia D de Enfrentamento às Arboviroses neste sábado (28/11), com a adesão de 96% […]",
+      "url": "https://www.saude.mg.gov.br/noticias/dia-d-mobiliza-820-municipios-de-minas-gerais-no-combate-aos-focos-do-aedes-aegypti/"
     }
   ]
 }
